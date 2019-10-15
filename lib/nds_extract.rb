@@ -18,5 +18,13 @@ def directors_totals(nds)
   #
   #
   # Be sure to return the result at the end!
-  nil
+  hash = {}
+  for x in directors_database
+    total_gross = 0
+    for y in x[:movies]
+      total_gross = total_gross + y[:worldwide_gross]
+    end
+    hash[x[:name]] = total_gross
+  end
+  hash
 end
